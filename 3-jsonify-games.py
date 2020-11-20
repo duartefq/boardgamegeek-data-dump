@@ -8,10 +8,7 @@ import sys
 INPUT_PATH = "BoardGameGeek.xml/%s/boardgame_batches/"
 OUTPUT_PATH = "BoardGameGeek.json/%s/boardgame_batches/"
 
-if len(sys.argv) > 1:
-    DATE_DIR = sys.argv[1]
-else:
-    DATE_DIR = datetime.datetime.strftime(datetime.datetime.now(), "%Y%m")
+DATE_DIR = datetime.datetime.strftime(datetime.datetime.now(), "%Y%m")
 
 input_dir = INPUT_PATH % DATE_DIR
 output_dir = OUTPUT_PATH % DATE_DIR

@@ -2,11 +2,9 @@ from httplib2 import Http
 import os
 import re
 import time
+import datetime
 
-if len(sys.argv) > 1:
-    DATE_DIR = sys.argv[1]
-else:
-    DATE_DIR = datetime.strftime(datetime.datetime.now(), "%Y%m")
+DATE_DIR = datetime.date.strftime(datetime.datetime.now(), "%Y%m")
 
 DUMP_DIR = os.path.join("BoardGameGeek.xml", DATE_DIR)
 
@@ -114,4 +112,4 @@ def crawl_geeklists():
             crawl_geeklist_file(os.path.join(SITEMAP_DIRECTORY, filename))
 
 crawl_boardgames()
-crawl_geeklists()
+# crawl_geeklists()
